@@ -1,36 +1,16 @@
-import { langsByISO, langsByName } from "./langs.js";
-
-var books = {
-    "1 Nephi": "1-ne",
-    "2 Nephi": "2-ne",
-    "Jacob": "jacob",
-    "Enos": "enos",
-    "Jarom": "jarom",
-    "Omni": "omni",
-    "Words of Mormon": "w-of-m",
-    "Mosiah": "mosiah",
-    "Alma": "alma",
-    "Helaman": "hel",
-    "3 Nephi": "3-ne",
-    "4 Nephi": "4-ne",
-    "Mormon": "morm",
-    "Ether": "ether",
-    "Moroni": "moro"
-}
-
-console.log(langsByName);
-
-console.log(langsByISO.indexOf("deu"));
+import { langsByISO, langsByName, books } from "./langs.js";
 
 const bookKeys = Object.keys(books);
 const bookValues = Object.values(books);
 
+// Populate the books of the BOM
 for (let i = 0; i < bookKeys.length; i++) {
     const bookElement = document.querySelector("#books");
     const bookHTML = `<option value="${bookValues[i]}">${bookKeys[i]}</option>`;
     bookElement.innerHTML += bookHTML;
 }
 
+// Populate the chapters
 for (let i = 1; i <= 63; i++) {
     // Improvement: Display chapters corrsponding to each book
     const chapterElement = document.querySelector("#chapters");
@@ -94,6 +74,10 @@ selLang2.addEventListener("change", function () {
 
 document.querySelector("#search").addEventListener("click", function () {
     function fetchDataIn(book = "Nach", chapter, lang) {
+
+        // Delete the intro after the first search
+        document.querySelector("#intro").innerHTML = ""
+
         const urlBOM = `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`
         let results = null;
 
