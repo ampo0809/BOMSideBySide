@@ -1,5 +1,5 @@
 html {
-    text-align: justify;
+  text-align: justify;
 }
 
 .title-number {
@@ -7,7 +7,7 @@ html {
   font-size: 20px;
 }
 
-/* This chunk allows the dual scroll */
+/* This chunk allows the dual scroll, source: http://jsfiddle.net/7ry4kndz/1/ */
 #langOutput,
 html,
 body,
@@ -42,7 +42,7 @@ main {
   padding: 2rem;
 }
 
-#me {
+.me {
   font-size: 15px;
   font-style: italic;
   text-align: right;
@@ -53,11 +53,37 @@ header {
   padding-top: 15px;
 }
 
-.choiceBar {
+#choiceBar {
   margin: auto;
   text-align: center;
 }
 
 footer {
   padding: 10px;
+}
+
+/* Makes the choiceBar dissapear. I haven't checked this thoroughly though */
+#choiceBar {
+  /* background-color: #333; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  padding: 15px;
+}
+
+#choiceBar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#choiceBar a:hover {
+  background-color: #ddd;
+  color: black;
 }

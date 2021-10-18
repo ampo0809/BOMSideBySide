@@ -1,8 +1,20 @@
 import { langsByISO, langsByName, books } from "./langs.js";
 
+// Some stuff about the DarkMode
 if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
     document.querySelector('link[href="/light.css"]').media = 'all';
-  }
+}
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("choiceBar").style.top = "0";
+    } else {
+        document.getElementById("choiceBar").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+}
 
 // Separate the books object into two iterable arrays
 const bookKeys = Object.keys(books);
@@ -82,7 +94,7 @@ document.querySelector("#search").addEventListener("click", function () {
     function fetchDataIn(book = "Nach", chapter, lang) {
 
         // Delete the intro after the first search
-        document.querySelector("#intro").innerHTML = ""
+        document.querySelector("#instrustions").innerHTML = ""
 
         const urlBOM = `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`
         let results = null;
@@ -99,7 +111,7 @@ document.querySelector("#search").addEventListener("click", function () {
         }
 
         function displayScripts(data) {
-            console.log(data);
+            // console.log(data);
             const outputBOMElement = document.querySelector(`#${lang}`);
             console.log(outputBOMElement);
             results = data
