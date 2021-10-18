@@ -17,7 +17,7 @@ main {
 
 #left {
   float: left;
-  width: 49.5%;
+  width: 49%;
   height: 100%;
   overflow: scroll;
 }
@@ -28,7 +28,7 @@ main {
 
 #right {
   float: right;
-  width: 49.5%;
+  width: 49%;
   height: 100%;
   overflow: scroll;
 }
