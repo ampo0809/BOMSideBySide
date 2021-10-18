@@ -1,5 +1,10 @@
 import { langsByISO, langsByName, books } from "./langs.js";
 
+if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
+    document.querySelector('link[href="/light.css"]').media = 'all';
+  }
+
+// Separate the books object into two iterable arrays
 const bookKeys = Object.keys(books);
 const bookValues = Object.values(books);
 
@@ -18,11 +23,12 @@ for (let i = 1; i <= 63; i++) {
     chapterElement.innerHTML += chapterHTML;
 }
 
+// Popultes both language dropdown menus at the same time
 for (let i = 0; i < langsByISO.length; i++) {
-    // Popultes both language dropdown menus at the same time. Ideally, the second menu should filter out the firlst language, but whatever...
+    // Ideally, the second menu should filter out the firlst language, but whatever...
     const langOneElement = document.querySelector("#lang1");
     const langTwoElement = document.querySelector("#lang2");
-    const langOptionHTML = `<option value="${langsByISO[i]}">${langsByISO[i].toUpperCase()}</option>`;
+    const langOptionHTML = `<option value="${langsByISO[i]}">${langsByName[i]}</option>`;
     langOneElement.innerHTML += langOptionHTML;
     langTwoElement.innerHTML += langOptionHTML;
 }
@@ -48,14 +54,14 @@ var selBooks = document.querySelector("#books");
 selBooks.addEventListener("change", function () {
     let bookOptionValue = selBooks.value;
     selectedBook = bookOptionValue;
-    console.log(selectedBook);
+    // console.log(selectedBook);
 });
 
 var selChap = document.querySelector("#chapters");
 selChap.addEventListener("change", function () {
     let chapterOptionValue = selChap.value;
     selectedChapter = chapterOptionValue;
-    console.log(selectedChapter);
+    // console.log(selectedChapter);
 });
 
 var selLang1 = document.querySelector("#lang1");
@@ -109,3 +115,4 @@ document.querySelector("#search").addEventListener("click", function () {
 });
 
 resetLanguageHTML(selectedLanguage1, selectedLanguage2);
+

@@ -29,6 +29,6 @@
     margin-right: 1rem;
 } 
 
-footer {
-    padding: 1rem;
+header, footer {
+    padding: 10px;
 }
