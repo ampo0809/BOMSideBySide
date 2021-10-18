@@ -19,21 +19,17 @@ window.onscroll = function () {
 
 // Separate the books object into two iterable arrays
 const bookKeys = Object.keys(booksAndChapters);
-
-const bookCodesAndChapters = Object.values(booksAndChapters);
-
-
-
-const bookCodes = Object.keys(bookCodesAndChapters);
-const bookChapters = Object.values(bookCodesAndChapters);
-
-
-console.log(bookCodes);
-console.log(bookChapters);
-
-
-
 const bookValues = Object.values(books);
+
+
+// Work in progess...
+// const bookCodesAndChapters = Object.values(booksAndChapters);
+
+// const bookCodes = Object.keys(bookCodesAndChapters);
+// const bookChapters = Object.values(bookCodesAndChapters);
+
+// console.log(bookCodes);
+// console.log(bookChapters);
 
 
 // Populate the books of the BOM
