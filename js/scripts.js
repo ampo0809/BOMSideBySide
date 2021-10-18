@@ -1,10 +1,11 @@
-import { langsByISO, langsByName, books } from "./langs.js";
+import { langsByISO, langsByName, books, booksAndChapters } from "./langs.js";
 
 // Some stuff about the DarkMode
 if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
     document.querySelector('link[href="/light.css"]').media = 'all';
 }
 
+// Related to the autohide of the choiceBar
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
@@ -17,8 +18,23 @@ window.onscroll = function () {
 }
 
 // Separate the books object into two iterable arrays
-const bookKeys = Object.keys(books);
+const bookKeys = Object.keys(booksAndChapters);
+
+const bookCodesAndChapters = Object.values(booksAndChapters);
+
+
+
+const bookCodes = Object.keys(bookCodesAndChapters);
+const bookChapters = Object.values(bookCodesAndChapters);
+
+
+console.log(bookCodes);
+console.log(bookChapters);
+
+
+
 const bookValues = Object.values(books);
+
 
 // Populate the books of the BOM
 for (let i = 0; i < bookKeys.length; i++) {
