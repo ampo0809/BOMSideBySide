@@ -1,34 +1,63 @@
+html {
+    text-align: justify;
+}
+
 .title-number {
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 /* This chunk allows the dual scroll */
-#langOutput, html, body {
-    height: 99.9%;
+#langOutput,
+html,
+body,
+main {
+  height: 99.9%;
 }
 
 #left {
-    float: left;
-    width: 50%;
-    height: 100%;
-    overflow: scroll;
+  float: left;
+  width: 49.5%;
+  height: 100%;
+  overflow: scroll;
 }
+
+#left::-webkit-scrollbar {
+  display: none;
+}
+
 #right {
-    float: left;
-    width: 50%;
-    height: 100%;
-    overflow: scroll;
+  float: right;
+  width: 49.5%;
+  height: 100%;
+  overflow: scroll;
+}
+
+#right::-webkit-scrollbar {
+  display: none;
 }
 /* Dual scroll till here */
 
-#me {
-    font-size: 15px;
-    font-style: italic;
-    text-align: right;
-    margin-right: 1rem;
-} 
+main {
+  padding: 2rem;
+}
 
-header, footer {
-    padding: 10px;
+#me {
+  font-size: 15px;
+  font-style: italic;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+header {
+  padding-top: 15px;
+}
+
+.choiceBar {
+  margin: auto;
+  text-align: center;
+}
+
+footer {
+  padding: 10px;
 }

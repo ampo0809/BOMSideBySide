@@ -5,35 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- I don't really understand/like doing CSS, here is the DarkMode source: https://dark-mode.glitch.me/ -->
-    <meta name="supported-color-schemes" content="light dark">   
-    <meta name="color-scheme" content="light dark">   
+    <meta name="supported-color-schemes" content="light dark" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: light)">
-    <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
+    <link
+      rel="stylesheet"
+      href="/light.css"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="stylesheet"
+      href="/dark.css"
+      media="(prefers-color-scheme: dark)"
+    />
     <script type="module" defer src="js/scripts.js"></script>
     <title>BOM Side By Side Reader</title>
   </head>
-  <header>
-    <label>I want to read:</label>
-    <select id="books"></select>
-    <select id="chapters"></select>
-    <label>in:</label>
-    <select id="lang1"></select>
-    <label>and:</label>
-    <select id="lang2"></select>
-    <button id="search">Search</button>
-  </header>
   <body>
-    <div id="intro">
-      <p>Write an introductory message here...</p>
-    </div>
-    <!-- These two should be dynamic -->
-    <div id="langOutput">
-      <!-- <section id="outputLang1"></section>
+    <header>
+      <div class="choiceBar">
+        <label>I want to read:</label>
+        <select id="books"></select>
+        <select id="chapters"></select>
+        <label>in:</label>
+        <select id="lang1"></select>
+        <label>and:</label>
+        <select id="lang2"></select>
+        <button id="search">Search</button>
+      </div>
+    </header>
+    <main>
+      <div id="intro">
+        <p>Write an introductory message here...</p>
+      </div>
+      <!-- These two should be dynamic -->
+      <div id="langOutput">
+        <!-- <section id="outputLang1"></section>
       <section id="outputLang2"></section> -->
-    </div>
+      </div>
+    </main>
+    <footer>
+      <p id="me">Powerded by Nacho Ampuero</p>
+    </footer>
   </body>
-  <footer>
-    <p id="me">Powerded by Nacho Ampuero</p>
-  </footer>
 </html>
