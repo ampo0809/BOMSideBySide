@@ -36,8 +36,8 @@ for (let i = 0; i < langsByISO.length; i++) {
 // With defautl values instead of null because it's too much work
 var selectedBook = bookValues[0];
 var selectedChapter = 1;
-var selectedLanguage1 = langsByISO[24]; // eng
-var selectedLanguage2 = langsByISO[17]; // deu
+var selectedLanguage1 = langsByISO[25]; // eng
+var selectedLanguage2 = langsByISO[18]; // deu
 
 function resetLanguageHTML(lang1, lang2) {
     const langDiv = document.querySelector("#langOutput");
