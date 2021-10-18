@@ -18,7 +18,7 @@ window.onscroll = function () {
 }
 
 // Separate the books object into two iterable arrays
-const bookKeys = Object.keys(booksAndChapters);
+const bookKeys = Object.keys(books);
 const bookValues = Object.values(books);
 
 
