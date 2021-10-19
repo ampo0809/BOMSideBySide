@@ -127,9 +127,9 @@ document.querySelector("#search").addEventListener("click", function () {
         function displayScripts(data) {
             // console.log(data);
             const outputBOMElement = document.querySelector(`#${lang}`);
-            console.log(outputBOMElement);
             results = data
             const chapterBody = results.content.body;
+            // Somewhere over here replace("/study/","https://www.churchofjesuschrist.org/study/") so the footnotes actually work
             outputBOMElement.innerHTML = chapterBody;
         }
 

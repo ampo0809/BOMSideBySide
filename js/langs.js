@@ -22,6 +22,5 @@ const booksAndChapters = {
     ]
 }
 
-
 // Preferrably to export in a class
 export { langsByISO, langsByName, booksAndChapters };
