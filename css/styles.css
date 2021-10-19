@@ -89,3 +89,22 @@ footer {
   background-color: #ddd;
   color: black;
 }
+
+.langOutput a {
+  pointer-events: none;
+  color: black;
+  text-decoration: none;
+}
+
+.langOutput footer, sup {
+  display: none;
+  visibility: hidden;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.intro {
+  font-style: italic;
+}

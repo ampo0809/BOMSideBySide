@@ -23,6 +23,16 @@
     border-width: 1px;
     border-radius: 1px;
   }
+
+  a {
+    color: rgb(183, 209, 252);
+  }
+
+  .langOutput a {
+    color: rgb(240, 240, 240);
+  }
+
+  
   
   /* Else, use `unset` (https://developer.mozilla.org/en-US/docs/Web/CSS/unset)
    * which resets a property to its inherited value if it inherits from its parent,
@@ -38,3 +48,5 @@
       background-color: unset;
     }
   }
+
+  
