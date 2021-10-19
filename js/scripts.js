@@ -61,13 +61,13 @@ var selectedLanguage1 = langsByISO[25]; // eng
 var selectedLanguage2 = langsByISO[18]; // deu
 
 function resetLanguageHTML(lang1, lang2) {
-    const langDiv = document.querySelector("#langOutput");
+    const langDiv = document.querySelector(".langOutput");
     langDiv.innerHTML = ""
 
-    const lang1SectionHTML = `<div id="left"><section id="${lang1}"></section></div>`;
+    const lang1SectionHTML = `<div class="left"><section id="${lang1}"></section></div>`;
     langDiv.innerHTML += lang1SectionHTML;
 
-    const lang2SectionHTML = `<div id="right"><section id="${lang2}"></section></div>`;
+    const lang2SectionHTML = `<div class="right"><section id="${lang2}"></section></div>`;
     langDiv.innerHTML += lang2SectionHTML;
 }
 

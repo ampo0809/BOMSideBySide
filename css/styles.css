@@ -8,35 +8,37 @@ html {
 }
 
 /* This chunk allows the dual scroll, source: http://jsfiddle.net/7ry4kndz/1/ */
-#langOutput,
+.langOutput,
 html,
 body,
 main {
   height: 99.9%;
 }
 
-#left {
+.left {
   float: left;
   width: 49%;
   height: 100%;
   overflow: scroll;
 }
 
-#left::-webkit-scrollbar {
+.left::-webkit-scrollbar {
   display: none;
 }
 
-#right {
+.right {
   float: right;
   width: 49%;
   height: 100%;
   overflow: scroll;
 }
 
-#right::-webkit-scrollbar {
+.right::-webkit-scrollbar {
   display: none;
 }
 /* Dual scroll till here */
+
+/* Idea on how to allign verses... But more complicated than the example: https://stackoverflow.com/questions/38275925/how-to-align-two-columns-in-html */
 
 main {
   padding: 2rem;
