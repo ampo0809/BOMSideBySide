@@ -9,4 +9,4 @@ https://ampo0809.github.io/BOMSideBySide/
 - [ ] Add last update in footer
 - [ ] Next/Previous chapter buttons
 - [ ] Toggle DarkMode button
-- [ ] Fill in the TODO list
+- [x] Fill in the TODO list
