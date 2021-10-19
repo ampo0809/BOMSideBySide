@@ -1,4 +1,4 @@
-import { langsByISO, langsByName, books, booksAndChapters } from "./langs.js";
+import { langsByISO, langsByName, booksAndChapters } from "./langs.js";
 
 // Some stuff about the DarkMode
 if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
@@ -17,34 +17,31 @@ window.onscroll = function () {
     prevScrollpos = currentScrollPos;
 }
 
-// Separate the books object into two iterable arrays
-const bookKeys = Object.keys(books);
-const bookValues = Object.values(books);
-
-
-// Work in progess...
-// const bookCodesAndChapters = Object.values(booksAndChapters);
-
-// const bookCodes = Object.keys(bookCodesAndChapters);
-// const bookChapters = Object.values(bookCodesAndChapters);
-
-// console.log(bookCodes);
-// console.log(bookChapters);
-
+// Separate books object into 3 arrays
+let bookNames = []
+for (let i = 0; i < 15; i++) { bookNames.push(booksAndChapters.books[i].bookName) };
+let bookCodes = []
+for (let i = 0; i < 15; i++) { bookCodes.push(booksAndChapters.books[i].bookCode) };
+let bookChapters = []
+for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookChapters) };
 
 // Populate the books of the BOM
-for (let i = 0; i < bookKeys.length; i++) {
+for (let i = 0; i < 15; i++) {
     const bookElement = document.querySelector("#books");
-    const bookHTML = `<option value="${bookValues[i]}">${bookKeys[i]}</option>`;
+    const bookHTML = `<option value="${bookCodes[i]}">${bookNames[i]}</option>`;
     bookElement.innerHTML += bookHTML;
 }
 
 // Populate the chapters
-for (let i = 1; i <= 63; i++) {
-    // Improvement: Display chapters corrsponding to each book
+function populateChapters(len = 22) {
     const chapterElement = document.querySelector("#chapters");
-    const chapterHTML = `<option value="${i}">${i}</option>`;
-    chapterElement.innerHTML += chapterHTML;
+    chapterElement.innerHTML = ""
+
+    for (let i = 1; i <= len; i++) {
+        // Improvement: Display chapters corrsponding to each book
+        const chapterHTML = `<option value="${i}">${i}</option>`;
+        chapterElement.innerHTML += chapterHTML;
+    }
 }
 
 // Popultes both language dropdown menus at the same time
@@ -58,7 +55,7 @@ for (let i = 0; i < langsByISO.length; i++) {
 }
 
 // With defautl values instead of null because it's too much work
-var selectedBook = bookValues[0];
+var selectedBook = bookCodes[0];
 var selectedChapter = 1;
 var selectedLanguage1 = langsByISO[25]; // eng
 var selectedLanguage2 = langsByISO[18]; // deu
@@ -78,7 +75,12 @@ var selBooks = document.querySelector("#books");
 selBooks.addEventListener("change", function () {
     let bookOptionValue = selBooks.value;
     selectedBook = bookOptionValue;
-    // console.log(selectedBook);
+    console.log(selectedBook);
+
+    // Finds the number of chapters to populate the chapter menu
+    let numChap = booksAndChapters.books.find(obj => obj.bookCode == selectedBook);
+    // console.log(numChap.bookChapters);
+    populateChapters(numChap.bookChapters);
 });
 
 var selChap = document.querySelector("#chapters");
@@ -139,4 +141,6 @@ document.querySelector("#search").addEventListener("click", function () {
 });
 
 resetLanguageHTML(selectedLanguage1, selectedLanguage2);
+populateChapters();
+
 

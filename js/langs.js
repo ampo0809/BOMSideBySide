@@ -2,42 +2,26 @@ const langsByISO = ['', 'afr', 'apw', 'aym', 'ind', 'msa', 'bam', 'tzo', 'bik', 
 
 const langsByName = ['Select Language', 'Afrikaans', 'Apache', 'Aymar', 'Bahasa', 'Bahasa', 'Bambara', "Bats'i", 'Bikol', 'Bislama', 'Cakchiquel', 'Català', 'Cebuano', 'Česky', 'Chamoru', 'Chichewa', 'Cymraeg', 'Dansk', 'Deutsch', 'Diné', 'Dulegaya', 'Èdè', 'Eesti', 'Efik', 'EkeGusii', 'English', 'Español', 'Euskera', 'Faka-tonga', 'Fante', 'Fiji', 'Fosun', 'Fɔngbè', 'Français', 'Gagana', 'gana', 'Guaraní', 'Hiligaynon', 'Hiri', 'Hmoob', 'Hrvatski', 'ʻŌlelo', 'Igbo', 'Ilokano', 'isiNdebele', 'isiXhosa', 'isiZulu', 'Íslenska', 'Italiano', 'Kahs', 'Kajin', 'Kichwa', 'Kikamba', 'Kinyarwanda', 'Kiribati', 'Kiswahili', 'ko', 'Kreyòl', 'Latviešu', 'Lietuvių', 'Lingála', 'maayaʼ', 'Magyar', 'Mahsen', 'Malagasy', 'Malti', 'Mam', 'Māori', 'Nederlands', 'Nivacle', 'Norsk', 'Palauan', 'Pampango', 'Pangasinan', 'Papiamento', 'Polski', 'Português', 'Português', "Q'eqchi'", 'Quechua-Bolivia', 'Quiché', 'Reo', 'Română', 'sePêdi', 'Setswana', 'Shona', 'Shqip', 'Shqip', 'Slovenčina', 'Slovenščina', 'South', 'Suomi', 'Svenska', 'Tagalog', 'Te', 'Thin', 'Tiếng', 'Tok', 'Tshiluba', 'Türkçe', 'Twi', 'Vosa', 'Waray', 'Yunkay', 'Ελληνικά', 'Български', 'Қазақ', 'Македонски', 'Монгол', 'Русский', 'Српски', 'Українська', 'ქართული', 'Արեւմտահայերէն', 'Հայերեն', 'اردو', 'العربية', 'فارسی', 'አማርኛ', 'नेपाली', 'हिन्दी,', 'বাংলা', 'தமிழ்', 'తెలుగు', 'ಕನ್ನಡ', 'සිංහල', 'ภาษาไทย', 'ພາສາລາວ', 'ကညီလံာ်ခီၣ်ထံ', 'ဗမာစာ', 'ភាសាខ្មែរ', '한국어', '中文', '日本語', '简体中文', '繁體中文'];
 
-var books = {
-    "1 Nephi": "1-ne",
-    "2 Nephi": "2-ne",
-    "Jacob": "jacob",
-    "Enos": "enos",
-    "Jarom": "jarom",
-    "Omni": "omni",
-    "Words of Mormon": "w-of-m",
-    "Mosiah": "mosiah",
-    "Alma": "alma",
-    "Helaman": "hel",
-    "3 Nephi": "3-ne",
-    "4 Nephi": "4-ne",
-    "Mormon": "morm",
-    "Ether": "ether",
-    "Moroni": "moro"
+const booksAndChapters = {
+    books: [
+        { bookName: "1 Nephi", bookCode: "1-ne", bookChapters: 22 },
+        { bookName: "2 Nephi", bookCode: "2-ne", bookChapters: 33 },
+        { bookName: "Jacob", bookCode: "jacob", bookChapters: 7 },
+        { bookName: "Enos", bookCode: "enos", bookChapters: 1 },
+        { bookName: "Jarom", bookCode: "jarom", bookChapters: 1 },
+        { bookName: "Omni", bookCode: "omni", bookChapters: 1 },
+        { bookName: "Words of Mormon", bookCode: "w-of-m", bookChapters: 1 },
+        { bookName: "Mosiah", bookCode: "mosiah", bookChapters: 29 },
+        { bookName: "Alma", bookCode: "alma", bookChapters: 63 },
+        { bookName: "Helaman", bookCode: "hel", bookChapters: 16 },
+        { bookName: "3 Nephi", bookCode: "3-ne", bookChapters: 30 },
+        { bookName: "4 Nephi", bookCode: "4-ne", bookChapters: 1 },
+        { bookName: "Mormon", bookCode: "morm", bookChapters: 9 },
+        { bookName: "Ether", bookCode: "ether", bookChapters: 15 },
+        { bookName: "Moroni", bookCode: "moro", bookChapters: 10 }
+    ]
 }
 
-// Work in progess...
-var booksAndChapters = {
-    // "1 Nephi": [{ "1-ne": 22 }],
-    // "2 Nephi": [{ "2-ne": 33 }],
-    // "Jacob": [{ "jacob": 7 }],
-    // "Enos": [{ "enos": 1 }],
-    // "Jarom": [{ "jarom": 1 }],
-    // "Omni": [{ "omni": 1 }],
-    // "Words of Mormon": [{ "w-of-m": 1 }],
-    // "Mosiah": [{ "mosiah": 29 }],
-    // "Alma": [{ "alma": 63 }],
-    // "Helaman": [{ "hel": 16 }],
-    // "3 Nephi": [{ "3-ne": 30 }],
-    // "4 Nephi": [{ "4-ne": 1 }],
-    // "Mormon": [{ "morm": 9 }],
-    // "Ether": [{ "ether": 15 }],
-    // "Moroni": [{ "moro": 10 }]
-}
 
 // Preferrably to export in a class
-export { langsByISO, langsByName, books, booksAndChapters };
+export { langsByISO, langsByName, booksAndChapters };
