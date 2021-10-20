@@ -1,4 +1,4 @@
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 50em) {
   .langOutput {
     grid-template-columns: 1fr 3rem 1fr;
   }
@@ -19,4 +19,31 @@
     line-height: 27px;
     font-size: 18px;
   }
+
+/* Makes the choiceBar dissapear. I haven't checked this thoroughly though */
+  #choiceBar {
+    /* background-color: #333; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    padding: 15px;
+  }
+  
+  #choiceBar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #choiceBar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  /* Till here */
 }

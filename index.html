@@ -12,13 +12,15 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "UA-210558571-1");
     </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
     <!-- I don't really understand/like doing CSS, here is the DarkMode source: https://dark-mode.glitch.me/ -->
     <meta name="supported-color-schemes" content="light dark" />
     <meta name="color-scheme" content="light dark" />
@@ -39,6 +41,17 @@
   </head>
   <body>
     <header>
+      <div class="mobile-portrait">
+        <img src="images/rotate.png" alt="Rotate your device to start" />
+        <p id="rotate-phone">Rotate your device to start</p>
+        <div class="imageCredits">Icons made by
+          <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a>
+          from
+          <a href="https://www.flaticon.com/" title="Flaticon"
+            >www.flaticon.com</a
+          >
+        </div>
+      </div>
       <div id="choiceBar">
         <label>I want to read:</label>
         <select id="books"></select>
@@ -61,22 +74,30 @@
         </p>
         <h3>Why?</h3>
         <p>
-          I believe in the Gift of Tongues, and do know the Book of Mormon
-          has power to help the reader achieve a higher proficiency in their
-          target language. This comes of course, along your dedication as a
-          language learner.
+          I believe in the Gift of Tongues, and do know the Book of Mormon has
+          power to help the reader achieve a higher proficiency in their target
+          language. This comes of course, along your dedication as a language
+          learner.
         </p>
         <h3>Suggestions & Improvements</h3>
         <p>
-          All suggestions are welcome via <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue" target="_blank"
-          >GitHub issues</a>. At the bottom you may find the link to the repository.
+          All suggestions are welcome via
+          <a
+            href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue"
+            target="_blank"
+            >GitHub issues</a
+          >. At the bottom you may find the link to the repository.
         </p>
-        <p>Improvements will come <strong>as long as the tool is being used</strong>. Please make sure to share it with your friends and local missionaries.</p>
+        <p>
+          Improvements will come
+          <strong>as long as the tool is being used</strong>. Please make sure
+          to share it with your friends and local missionaries.
+        </p>
         <h3>Disclaimer</h3>
         <p>
-          This site is freely polling the Church's server with the API used by their website,
-          however it's not sponsored by the Church itself. If you happen to work for the
-          Church's legal department, please don't sue me.
+          This site is freely polling the Church's server with the API used by
+          their website, however it's not sponsored by the Church itself. If you
+          happen to work for the Church's legal department, please don't sue me.
         </p>
       </div>
       <!-- These two should be dynamic -->
