@@ -8,6 +8,10 @@ html {
 
 @media screen and (orientation: portrait) {
   /* For now it blocks tablets in portrait mode. Not desired. */
+  html {
+    overflow: hidden;
+  }
+
   #choiceBar,
   .instructions,
   .langOutput,

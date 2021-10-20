@@ -22,7 +22,7 @@
 
 /* Makes the choiceBar dissapear. I haven't checked this thoroughly though */
   #choiceBar {
-    /* background-color: #333; */
+    background-color: var(--bar-colour);
     position: fixed;
     top: 0;
     width: 100%;
