@@ -134,8 +134,12 @@ p {
   padding: 0px 0px 11.7px;
 }
 
-#instructions {
+.instructions {
   padding-top: 1rem;
   max-width: 80%;
   margin: auto;
+}
+
+.instructions h3 {
+  padding-top: 1rem;
 }
