@@ -108,7 +108,7 @@ document.querySelector("#search").addEventListener("click", function () {
     function fetchDataIn(book = "Nach", chapter, lang) {
 
         // Delete the intro after the first search
-        document.querySelector("#instrustions").innerHTML = ""
+        document.querySelector("#instructions").innerHTML = ""
 
         const urlBOM = `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`
         let results = null;

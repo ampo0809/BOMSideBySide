@@ -27,7 +27,7 @@ main {
   /* float: right; */
   justify-self: start;
   width: 90%;
-  height: 100%;
+  height: auto;
   overflow: scroll;
   grid-column: 3 / 4;
 }
@@ -40,7 +40,7 @@ main {
   /* float: right; */
   justify-self: end;
   width: 90%;
-  height: 100%;
+  height: auto;
   overflow: scroll;
   grid-column: 1 / 2;
 }
@@ -132,4 +132,12 @@ p {
   line-height: 27px;
   font-size: 18px;
   padding: 0px 0px 11.7px;
+}
+
+#instructions {
+  padding-top: 1rem;
+  max-width: 80%;
+  margin: auto;
+  /* height: 100%; */
+  /* justify-self: center; */
 }

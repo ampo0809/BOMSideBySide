@@ -1,26 +1,17 @@
 @media only screen and (min-width: 60em) {
+  .langOutput {
+    grid-template-columns: 1fr 3rem 1fr;
+  }
 
-	.langOutput {
-        /* display: grid; */
-        grid-template-columns: 1fr 3rem 1fr;
-      }
-      
-      .right {
-        /* float: right; */
-        /* justify-self: start; */
-        width: 75%;
-        /* height: 100%; */
-        /* overflow: scroll; */
-        /* grid-column: 3 / 4; */
-      }
-      
-      .left {
-        /* float: right; */
-        /* justify-self: end; */
-        width: 75%;
-        /* height: 100%; */
-        /* overflow: scroll; */
-        /* grid-column: 1 / 2; */
-      }
+  .right {
+    width: 75%;
+  }
 
+  .left {
+    width: 75%;
+  }
+
+  #instructions {
+    max-width: 50%;
+  }
 }
