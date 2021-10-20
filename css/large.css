@@ -14,4 +14,9 @@
   #instructions {
     max-width: 50%;
   }
+
+  p {
+    line-height: 27px;
+    font-size: 18px;
+  }
 }
