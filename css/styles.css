@@ -1,5 +1,8 @@
 html {
-  text-align: justify;
+  text-align: left;
+  font-family: "Ensign:Serif", McKay, "McKay ldsLat", Palatino,
+    "Palatino Linotype", Palatino-Roman, Pahoran, "Pahoran ldsLat",
+    "Noto Sans Myanmar", NotoSansMyanmar, SaysetthaldsLao, NotoSerifTamil, serif;
 }
 
 .title-number {
@@ -15,25 +18,34 @@ main {
   height: 99.9%;
 }
 
-.left {
-  float: left;
-  width: 49%;
-  height: 100%;
-  overflow: scroll;
-}
-
-.left::-webkit-scrollbar {
-  display: none;
+.langOutput {
+  display: grid;
+  grid-template-columns: 1fr 3rem 1fr;
 }
 
 .right {
-  float: right;
-  width: 49%;
+  /* float: right; */
+  justify-self: start;
+  width: 75%;
   height: 100%;
   overflow: scroll;
+  grid-column: 3 / 4;
 }
 
 .right::-webkit-scrollbar {
+  display: none;
+}
+
+.left {
+  /* float: right; */
+  justify-self: end;
+  width: 75%;
+  height: 100%;
+  overflow: scroll;
+  grid-column: 1 / 2;
+}
+
+.left::-webkit-scrollbar {
   display: none;
 }
 /* Dual scroll till here */
@@ -96,15 +108,28 @@ footer {
   text-decoration: none;
 }
 
-.langOutput footer, sup {
+.langOutput footer,
+sup {
   display: none;
   visibility: hidden;
 }
 
-.subtitle {
-  font-weight: bold;
+.subtitle,
+.verse-number {
+  font-weight: 700;
 }
 
-.intro {
+.study-summary {
   font-style: italic;
+}
+
+.classic-scripture .body-block .verse {
+  text-indent: 0;
+  padding-bottom: 0.65em;
+}
+
+p {
+  line-height: 27px;
+  font-size: 18px;
+  padding: 0px 0px 11.7px;
 }

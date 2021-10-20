@@ -66,7 +66,6 @@ function resetLanguageHTML(lang1, lang2) {
 
     const lang1SectionHTML = `<div class="left"><section id="${lang1}"></section></div>`;
     langDiv.innerHTML += lang1SectionHTML;
-
     const lang2SectionHTML = `<div class="right"><section id="${lang2}"></section></div>`;
     langDiv.innerHTML += lang2SectionHTML;
 }
