@@ -10,4 +10,5 @@ https://ampo0809.github.io/BOMSideBySide/
 - [ ] Next/Previous chapter buttons
 - [ ] Toggle DarkMode button
 - [ ] Favicon
+- [x] Bug in chapter number
 - [x] Fill in the TODO list

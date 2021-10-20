@@ -25,6 +25,12 @@ for (let i = 0; i < 15; i++) { bookCodes.push(booksAndChapters.books[i].bookCode
 let bookChapters = []
 for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookChapters) };
 
+// With defautl values instead of null because it's too much work
+var selectedBook = bookCodes[0];
+var selectedChapter = 1;
+var selectedLanguage1 = langsByISO[25]; // eng
+var selectedLanguage2 = langsByISO[18]; // deu
+
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {
     const bookElement = document.querySelector("#books");
@@ -42,6 +48,7 @@ function populateChapters(len = 22) {
         const chapterHTML = `<option value="${i}">${i}</option>`;
         chapterElement.innerHTML += chapterHTML;
     }
+    selectedChapter = 1
 }
 
 // Popultes both language dropdown menus at the same time
@@ -53,12 +60,6 @@ for (let i = 0; i < langsByISO.length; i++) {
     langOneElement.innerHTML += langOptionHTML;
     langTwoElement.innerHTML += langOptionHTML;
 }
-
-// With defautl values instead of null because it's too much work
-var selectedBook = bookCodes[0];
-var selectedChapter = 1;
-var selectedLanguage1 = langsByISO[25]; // eng
-var selectedLanguage2 = langsByISO[18]; // deu
 
 function resetLanguageHTML(lang1, lang2) {
     const langDiv = document.querySelector(".langOutput");
@@ -140,6 +141,6 @@ document.querySelector("#search").addEventListener("click", function () {
 });
 
 resetLanguageHTML(selectedLanguage1, selectedLanguage2);
-populateChapters();
+populateChapters()
 
 
