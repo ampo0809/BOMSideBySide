@@ -5,6 +5,7 @@ https://ampo0809.github.io/BOMSideBySide/
 #### Priorities
 - [ ] Pin the verses to each other via CSS
 - [ ] Font size selector
+- [ ] Fix search bar and footer
 -----------------------------------------------
 - [ ] Add last update in footer
 - [ ] Next/Previous chapter buttons
