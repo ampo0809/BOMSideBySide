@@ -20,13 +20,13 @@ main {
 
 .langOutput {
   display: grid;
-  grid-template-columns: 1fr 3rem 1fr;
+  grid-template-columns: 1fr 2rem 1fr;
 }
 
 .right {
   /* float: right; */
   justify-self: start;
-  width: 75%;
+  width: 90%;
   height: 100%;
   overflow: scroll;
   grid-column: 3 / 4;
@@ -39,7 +39,7 @@ main {
 .left {
   /* float: right; */
   justify-self: end;
-  width: 75%;
+  width: 90%;
   height: 100%;
   overflow: scroll;
   grid-column: 1 / 2;
