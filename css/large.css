@@ -1,14 +1,14 @@
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 60em) {
   .langOutput {
     grid-template-columns: 1fr 3rem 1fr;
   }
 
   .right {
-    width: 75%;
+    width: 70%;
   }
 
   .left {
-    width: 75%;
+    width: 70%;
   }
 
   .instructions {

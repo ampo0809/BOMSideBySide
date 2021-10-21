@@ -99,7 +99,7 @@ html {
   /* Idea on how to allign verses... But more complicated than the example: https://stackoverflow.com/questions/38275925/how-to-align-two-columns-in-html */
 
   main {
-    padding: 2rem;
+    padding: 1rem;
     height: 300%; 
     /* 300% is a hacky fix for mobile */
     /* Could improve the mobile view changing that padding */
