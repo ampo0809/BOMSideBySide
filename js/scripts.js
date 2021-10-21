@@ -142,6 +142,9 @@ document.querySelector("#search").addEventListener("click", function () {
             const chapterBody = results.content.body;
             // Somewhere over here replace("/study/","https://www.churchofjesuschrist.org/study/") so the footnotes actually work
             outputBOMElement.innerHTML = chapterBody;
+
+            // const footer = document.querySelector("footer");
+            // footer.innerHTML = "";
         }
 
         fetch(urlBOM).then(convertToJson).then(displayScripts);

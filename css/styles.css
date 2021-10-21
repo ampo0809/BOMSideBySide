@@ -100,6 +100,8 @@ html {
 
   main {
     padding: 2rem;
+    height: 300%; 
+    /* 300% is a hacky fix for mobile */
     /* Could improve the mobile view changing that padding */
   }
 
@@ -113,16 +115,16 @@ html {
   }
 
   /* FIX THE FOOOTER LATER. I have bigger problems with other stuff. */
-  /* footer {
-    position: fixed;
+  footer {
+    position: relative;
     bottom:0;
     right:0;
     height: auto;
-    width: 100%;
-    background-color: var(--bar-colour);
+    /* width: 100%; */
+    /* background-color: var(--bar-colour); */
     padding: 1rem;
     transition: bottom 0.3s;
-  } */
+  }
 
   .me {
     /* display: grid;
