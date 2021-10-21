@@ -12,10 +12,21 @@ window.onscroll = function () {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("choiceBar").style.top = "0";
     } else {
-        document.getElementById("choiceBar").style.top = "-50px";
+        document.getElementById("choiceBar").style.top = "-100px";
     }
     prevScrollpos = currentScrollPos;
 }
+
+// var aaaaaaaa = window.pageYOffset;
+// window.onscroll = function () {
+//     var currentScrollPos = window.pageYOffset;
+//     if (aaaaaaaa > currentScrollPos) {
+//         document.querySelector("footer").style.bottom = "0";
+//     } else {
+//         document.querySelector("footer").style.bottom = "-100px";
+//     }
+//     aaaaaaaa = currentScrollPos;
+// }
 
 // Separate books object into 3 arrays
 let bookNames = []

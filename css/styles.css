@@ -66,15 +66,17 @@ html {
 
   .langOutput {
     display: grid;
-    grid-template-columns: 1fr 1.5rem 1fr;
+    grid-template-columns: auto 1.5rem auto;
+    /* visibility: hidden; */
   }
 
   .left {
     justify-self: end;
     width: 100%;
-    height: auto;
+    /* height: 100%; */
     overflow: scroll;
     grid-column: 1 / 2;
+    
   }
 
   .left::-webkit-scrollbar {
@@ -84,7 +86,7 @@ html {
   .right {
     justify-self: start;
     width: 100%;
-    height: auto;
+    /* height: 100%; */
     overflow: scroll;
     grid-column: 3 / 4;
   }
@@ -98,13 +100,7 @@ html {
 
   main {
     padding: 2rem;
-  }
-
-  .me {
-    font-size: 15px;
-    font-style: italic;
-    text-align: right;
-    margin-right: 1rem;
+    /* Could improve the mobile view changing that padding */
   }
 
   header {
@@ -116,8 +112,39 @@ html {
     text-align: center;
   }
 
-  footer {
-    padding: 10px;
+  /* FIX THE FOOOTER LATER. I have bigger problems with other stuff. */
+  /* footer {
+    position: fixed;
+    bottom:0;
+    right:0;
+    height: auto;
+    width: 100%;
+    background-color: var(--bar-colour);
+    padding: 1rem;
+    transition: bottom 0.3s;
+  } */
+
+  .me {
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .me p {
+    font-size: 15px;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #github {
+    text-align: right;
+    /* grid-column: 1; */
+  }
+  #me {
+    text-align: right;
+    /* grid-column: 2; */
   }
 
   .langOutput a {
@@ -128,6 +155,7 @@ html {
 
   .langOutput footer,
   sup {
+    /* Do NOT confuse with the site footer. This hides the footnotes from the scriptures and the superindexes. */
     display: none;
     visibility: hidden;
   }
