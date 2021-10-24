@@ -3,11 +3,12 @@ https://ampo0809.github.io/BOMSideBySide/
 
 ### TODO
 #### Priorities
-- [ ] Pin the verses to each other via CSS
+- [ ] Pin the verses to each other
 - [ ] Font size selector
 - [ ] Fix search bar and footer
 -----------------------------------------------
 - [ ] Add last update in footer
+- [ ] Recognise the user's language
 - [ ] Next/Previous chapter buttons
 - [ ] Toggle DarkMode button
 - [ ] Favicon
