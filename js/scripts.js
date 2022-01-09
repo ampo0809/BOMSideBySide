@@ -123,6 +123,7 @@ document.querySelector("#search").addEventListener("click", function() {
         }
     }
 
+    // THE VERS ALIGNMENT IS CREDITED TO ROUVEN LEMMERZ
     function alignSideBySide(chapterBody0, chapterBody1) {
         let dat0 = new DOMParser().parseFromString(chapterBody0, 'text/html');
         let dat1 = new DOMParser().parseFromString(chapterBody1, 'text/html');
@@ -146,20 +147,6 @@ document.querySelector("#search").addEventListener("click", function() {
         for (let i = 0; i < headernodes0.length; i++) {
             headernodes0[i].innerHTML = wraptc(headernodes0[i].innerHTML, "left") + wraptc(headernodes1[i].innerHTML, "right");
         }
-        /*
-        //"Correct way" of implementing the above by adding children in the DOM Tree
-            for (let i = 0; i < headernodes0.length; i++) { 
-        var div0 = document.createElement("span"); //How to input class left?
-        var div1 = document.createElement("span");
-        var t0 = document.createTextNode(headernodes0[i].innerText);
-        var t1 = document.createTextNode(headernodes1[i].innerText);
-        div0.appendChild(headernodes0[i].childNodes[0]);
-        div1.appendChild(t1);
-        //headernodes0[i].removeChild(headernodes0[i].childNodes[0]);
-        headernodes0[i].appendChild(div0);
-        headernodes0[i].appendChild(div1);		
-        }
-        */
 
         //Merge Paragraphs by number
         for (let i = 1; i < dat0.getElementsByClassName("verse").length + 1; i++) {
