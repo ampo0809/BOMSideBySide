@@ -7,7 +7,7 @@ if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
 
 // Related to the autohide of the choiceBar
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
+window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("choiceBar").style.top = "0";
@@ -16,17 +16,6 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
 }
-
-// var aaaaaaaa = window.pageYOffset;
-// window.onscroll = function () {
-//     var currentScrollPos = window.pageYOffset;
-//     if (aaaaaaaa > currentScrollPos) {
-//         document.querySelector("footer").style.bottom = "0";
-//     } else {
-//         document.querySelector("footer").style.bottom = "-100px";
-//     }
-//     aaaaaaaa = currentScrollPos;
-// }
 
 // Separate books object into 3 arrays
 let bookNames = []
@@ -83,7 +72,7 @@ function resetLanguageHTML(lang1, lang2) {
 }
 
 var selBooks = document.querySelector("#books");
-selBooks.addEventListener("change", function () {
+selBooks.addEventListener("change", function() {
     let bookOptionValue = selBooks.value;
     selectedBook = bookOptionValue;
     console.log(selectedBook);
@@ -95,27 +84,27 @@ selBooks.addEventListener("change", function () {
 });
 
 var selChap = document.querySelector("#chapters");
-selChap.addEventListener("change", function () {
+selChap.addEventListener("change", function() {
     let chapterOptionValue = selChap.value;
     selectedChapter = chapterOptionValue;
     // console.log(selectedChapter);
 });
 
 var selLang1 = document.querySelector("#lang1");
-selLang1.addEventListener("change", function () {
+selLang1.addEventListener("change", function() {
     let langOptionValue = selLang1.value;
     selectedLanguage1 = langOptionValue;
     console.log(selectedLanguage1);
 });
 
 var selLang2 = document.querySelector("#lang2");
-selLang2.addEventListener("change", function () {
+selLang2.addEventListener("change", function() {
     let langOptionValue = selLang2.value;
     selectedLanguage2 = langOptionValue;
     console.log(selectedLanguage2);
 });
 
-document.querySelector("#search").addEventListener("click", function () {
+document.querySelector("#search").addEventListener("click", function() {
     function fetchDataIn(book = "Nach", chapter, lang) {
 
         // Delete the intro after the first search
@@ -156,5 +145,3 @@ document.querySelector("#search").addEventListener("click", function () {
 
 resetLanguageHTML(selectedLanguage1, selectedLanguage2);
 populateChapters()
-
-
