@@ -28,8 +28,10 @@ for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookC
 // With defautl values instead of null because it's too much work
 var selectedBook = bookCodes[0];
 var selectedChapter = 1;
-var selectedLanguage1 = langsByISO[25]; // eng
-var selectedLanguage2 = langsByISO[18]; // deu
+var selectedLanguage1 = langsByISO[18]; // deu
+var selectedLanguage2 = langsByISO[109]; // rus
+
+// console.log(langsByISO.indexOf("rus"));
 
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {

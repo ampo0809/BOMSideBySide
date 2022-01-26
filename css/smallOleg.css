@@ -1,24 +1,45 @@
 html {
     text-align: left;
-    font-family: "Ensign:Serif", McKay, "McKay ldsLat", Palatino, "Palatino Linotype", Palatino-Roman, Pahoran, "Pahoran ldsLat", "Noto Sans Myanmar", NotoSansMyanmar, SaysetthaldsLao, NotoSerifTamil, serif;
+    font-family: "Ensign:Serif";
+    font-weight: 200;
 }
 
 @media screen and (orientation: landscape) {
+    .langOutput {
+        margin: 0 .2rem;
+    }
     .mobile-portrait {
         display: none;
         visibility: hidden;
     }
-    .dominant h1 {
-        font-size: 1.75em;
-        line-height: 1em;
-        display: block;
-        padding-top: .15em;
+    h1,
+    .subtitle {
+        font-size: 1.2em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .dominant {
+        font-size: 2em;
+    }
+    .title-number {
+        font-size: 1.3em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .study-summary {
+        font-style: italic;
+        font-weight: 100;
+    }
+    p {
+        font-size: 20px;
+        word-spacing: 1px;
+        line-height: 130%;
     }
     .langOutput h1,
     p {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
+        grid-gap: 1.2rem;
     }
     /* Hide all hiperlinks */
     .langOutput a {
