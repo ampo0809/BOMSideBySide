@@ -1,53 +1,45 @@
 @media only screen and (min-width: 60em) {
-  .langOutput {
-    grid-template-columns: 1fr 3rem 1fr;
-  }
-
-  .right {
-    width: 70%;
-  }
-
-  .left {
-    width: 70%;
-  }
-
-  .instructions {
-    max-width: 50%;
-  }
-
-  main {
-    height: 100%;
-  }
-
-  p {
-    line-height: 27px;
-    font-size: 18px;
-  }
-
-/* Makes the choiceBar dissapear. I haven't checked this thoroughly though */
-  #choiceBar {
-    background-color: var(--bar-colour);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
-    padding: 15px;
-  }
-  
-  #choiceBar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  #choiceBar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  /* Till here */
+    .langOutput {
+        grid-template-columns: 1fr 3rem 1fr;
+    }
+    .right {
+        width: 70%;
+    }
+    .left {
+        width: 70%;
+    }
+    .instructions {
+        max-width: 50%;
+    }
+    main {
+        height: 100%;
+    }
+    p {
+        line-height: 27px;
+        font-size: 18px;
+    }
+    /* Makes the choiceBar dissapear. I haven't checked this thoroughly though */
+    #choiceBar {
+        background-color: var(--bar-colour);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: block;
+        transition: top 0.3s;
+        padding: 15px;
+    }
+    #choiceBar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    #choiceBar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    /* Till here */
 }

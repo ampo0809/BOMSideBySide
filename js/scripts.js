@@ -140,12 +140,19 @@ document.querySelector("#search").addEventListener("click", function() {
             //return str;
         }
 
+        let headerH1Nodes0 = dat0.querySelectorAll("header > h1");
+        let headerH1Nodes1 = dat1.querySelectorAll("header > h1");
+        for (let i = 0; i < headerH1Nodes0.length; i++) {
+            headerH1Nodes0[i].innerHTML = wraptc(headerH1Nodes0[i].innerHTML, "left") + wraptc(headerH1Nodes1[i].innerHTML, "right");
+        }
+
+
         //Merge Headers
         // (Chapter headings not yet Merged)
-        let headernodes0 = dat0.querySelectorAll("header > p");
-        let headernodes1 = dat1.querySelectorAll("header > p");
-        for (let i = 0; i < headernodes0.length; i++) {
-            headernodes0[i].innerHTML = wraptc(headernodes0[i].innerHTML, "left") + wraptc(headernodes1[i].innerHTML, "right");
+        let headerPNodes0 = dat0.querySelectorAll("header > p");
+        let headerPNodes1 = dat1.querySelectorAll("header > p");
+        for (let i = 0; i < headerPNodes0.length; i++) {
+            headerPNodes0[i].innerHTML = wraptc(headerPNodes0[i].innerHTML, "left") + wraptc(headerPNodes1[i].innerHTML, "right");
         }
 
         //Merge Paragraphs by number

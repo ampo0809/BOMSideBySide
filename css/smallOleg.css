@@ -1,0 +1,45 @@
+.langOutput h1,
+p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+}
+
+
+/* Prevent usage in portrait mode. */
+
+
+/* For now it blocks tablets in portrait mode. Not desired. */
+
+@media screen and (orientation: portrait) {
+    html {
+        overflow: hidden;
+    }
+    #choiceBar,
+    .instructions,
+    .langOutput,
+    footer {
+        display: none;
+        visibility: hidden;
+    }
+    .imageCredits {
+        font-size: 7px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 3px;
+    }
+    .mobile-portrait img,
+    #rotate-phone {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 7rem;
+    }
+    #rotate-phone {
+        width: 7rem;
+        padding-top: 10rem;
+        text-align: center;
+    }
+}
