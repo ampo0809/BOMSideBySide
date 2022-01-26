@@ -1,8 +1,44 @@
-.langOutput h1,
-p {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+html {
+    text-align: left;
+    font-family: "Ensign:Serif", McKay, "McKay ldsLat", Palatino, "Palatino Linotype", Palatino-Roman, Pahoran, "Pahoran ldsLat", "Noto Sans Myanmar", NotoSansMyanmar, SaysetthaldsLao, NotoSerifTamil, serif;
+}
+
+@media screen and (orientation: landscape) {
+    .mobile-portrait {
+        display: none;
+        visibility: hidden;
+    }
+    .dominant h1 {
+        font-size: 1.75em;
+        line-height: 1em;
+        display: block;
+        padding-top: .15em;
+    }
+    .langOutput h1,
+    p {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+    /* Hide all hiperlinks */
+    .langOutput a {
+        pointer-events: none;
+        color: black;
+        text-decoration: none;
+    }
+    /* Hide all superindexes */
+    .langOutput footer,
+    sup {
+        /* Do NOT confuse with the site footer. This hides the footnotes from the scriptures and the superindexes. */
+        display: none;
+        visibility: hidden;
+    }
+    .langOutput footer,
+    sup {
+        /* Do NOT confuse with the site footer. This hides the footnotes from the scriptures and the superindexes. */
+        display: none;
+        visibility: hidden;
+    }
 }
 
 
