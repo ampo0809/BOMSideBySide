@@ -1,0 +1,130 @@
+html {
+    text-align: left;
+    font-family: "Ensign:Serif";
+    font-weight: 200;
+}
+
+@media screen and (orientation: landscape) {
+    #choiceBar {
+        padding: 1rem;
+        text-align: center;
+        background-color: var(--bar-colour);
+    }
+    .instructions {
+        margin: 0 3rem;
+    }
+    .instructions h1,
+    .instructions h3 {
+        font-weight: 700;
+    }
+    .langOutput {
+        margin: 0 .2rem;
+    }
+    .mobile-portrait {
+        display: none;
+        visibility: hidden;
+    }
+    h1,
+    .subtitle {
+        font-size: 1.2em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .dominant {
+        font-size: 2em;
+    }
+    .title-number {
+        font-size: 1.3em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .study-summary {
+        font-style: italic;
+        font-weight: 100;
+    }
+    p {
+        font-size: 20px;
+        word-spacing: 1px;
+        line-height: 130%;
+    }
+    .langOutput h1,
+    .langOutput p {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.2rem;
+    }
+    /* Hide all hiperlinks */
+    .langOutput a {
+        pointer-events: none;
+        color: black;
+        text-decoration: none;
+    }
+    /* Hide all superindexes */
+    .langOutput footer,
+    sup {
+        /* Do NOT confuse with the site footer. This hides the footnotes from the scriptures and the superindexes. */
+        display: none;
+        visibility: hidden;
+    }
+    .langOutput footer,
+    sup {
+        /* Do NOT confuse with the site footer. This hides the footnotes from the scriptures and the superindexes. */
+        display: none;
+        visibility: hidden;
+    }
+    .me {
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+    }
+    .me p {
+        font-size: 15px;
+        font-style: italic;
+        padding: 0;
+        margin: 0;
+    }
+    #github {
+        text-align: right;
+    }
+    #me {
+        text-align: right;
+    }
+}
+
+
+/* Prevent usage in portrait mode. */
+
+
+/* For now it blocks tablets in portrait mode. Not desired. */
+
+@media screen and (orientation: portrait) {
+    html {
+        overflow: hidden;
+    }
+    #choiceBar,
+    .instructions,
+    .langOutput,
+    footer {
+        display: none;
+        visibility: hidden;
+    }
+    .imageCredits {
+        font-size: 7px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-right: 3px;
+    }
+    .mobile-portrait img,
+    #rotate-phone {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 7rem;
+    }
+    #rotate-phone {
+        width: 7rem;
+        padding-top: 10rem;
+        text-align: center;
+    }
+}
