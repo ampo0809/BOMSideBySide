@@ -5,6 +5,14 @@ html {
 }
 
 @media screen and (orientation: landscape) {
+    #choiceBar {
+        padding: 1rem;
+        text-align: center;
+        background-color: var(--bar-colour);
+    }
+    .instructions {
+        margin: 0 3rem;
+    }
     .langOutput {
         margin: 0 .2rem;
     }
@@ -36,7 +44,7 @@ html {
         line-height: 130%;
     }
     .langOutput h1,
-    p {
+    .langOutput p {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1.2rem;
@@ -59,6 +67,22 @@ html {
         /* Do NOT confuse with the site footer. This hides the footnotes from the scriptures and the superindexes. */
         display: none;
         visibility: hidden;
+    }
+    .me {
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+    }
+    .me p {
+        font-size: 15px;
+        font-style: italic;
+        padding: 0;
+        margin: 0;
+    }
+    #github {
+        text-align: right;
+    }
+    #me {
+        text-align: right;
     }
 }
 
