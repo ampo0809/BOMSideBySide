@@ -112,16 +112,11 @@ document.querySelector("#search").addEventListener("click", function() {
     document.querySelector(".instructions").innerHTML = ""
 
     function urlBOM(book, chapter, lang) {
-
-        // console.log(book, chapter, lang);
-
-        const localLanguages = ["eng", "spa", "por"]
-
+        // First search if the chosen language is stored locally
+        const localLanguages = ["eng", "spa", "por", "rus", "deu"]
         if (localLanguages.includes(lang)) {
             console.log(`${lang} found locally`);
             return `bomLocal/${lang}/${book}_${chapter}.json`;
-
-            // return `bomLocal/teest.json`;
         } else {
             return `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`;
         }
@@ -129,9 +124,6 @@ document.querySelector("#search").addEventListener("click", function() {
         // Original URL
         // https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=eng&uri=/scriptures/bofm/1-ne/1
     }
-
-    // function urlBOM(book, chapter, lang) { return `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`; }
-
 
     // Should reset the languages in the HTML, otherwise the chosen order can't be achieved
     //resetLanguageHTML(selectedLanguage1, selectedLanguage2);
