@@ -3,7 +3,7 @@ https://ampo0809.github.io/BOMSideBySide/
 
 ### TODO
 #### Priorities
-- [ ] Pin the verses to each other
+- [x] Pin the verses to each other
 - [ ] Font size selector
 - [ ] Fix search bar and footer
 -----------------------------------------------
@@ -14,3 +14,9 @@ https://ampo0809.github.io/BOMSideBySide/
 - [ ] Favicon
 - [x] Bug in chapter number
 - [x] Fill in the TODO list
+
+-----------------------------------------------
+### Acknowledgements
+Thank you for your collaboration!
+- Rouven Lemmerz
+- Oleg Obiukh

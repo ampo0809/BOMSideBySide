@@ -1,58 +1,58 @@
 :root {
-    --background-color: rgb(33, 34, 37);
-    --text-color: rgb(223, 225, 225);
+    --background-color: rgb(0, 0, 0);
+    --text-color: rgb(191, 191, 191);
     --shadow-color: rgba(240, 240, 240, 0.5);
     --accent-color: rgba(240, 0, 0, 0.5);
     --bar-colour: rgb(51, 51, 51);
-  }
+}
 
-  html {
+html {
     background-color: var(--background-color);
     color: var(--text-color);
-  }
-  
-  img {
+}
+
+img {
     filter: grayscale(50%);
-  }
-  
-  .icon {
+}
+
+.icon {
     filter: invert(100%);
-  }
-  
-  /* If the browser is unaware of `prefers-color-scheme` */
-  select,
-  input,
-  button,
-  option {
+}
+
+
+/* If the browser is unaware of `prefers-color-scheme` */
+
+select,
+input,
+button,
+option {
     color: var(--text-color);
     background-color: var(--background-color);
     border-width: 1px;
     border-radius: 1px;
-  }
+}
 
-  a {
+a {
     color: rgb(183, 209, 252);
-  }
+}
 
-  .langOutput a {
+.langOutput a {
     color: var(--text-color);
-  }
+}
 
-  
-  
-  /* Else, use `unset` (https://developer.mozilla.org/en-US/docs/Web/CSS/unset)
+
+/* Else, use `unset` (https://developer.mozilla.org/en-US/docs/Web/CSS/unset)
    * which resets a property to its inherited value if it inherits from its parent,
    * and to its initial value if not. Here, it inherits
    * `--background-color` and `--text-color`.
    */
-  @media (prefers-color-scheme: dark) {
+
+@media (prefers-color-scheme: dark) {
     select,
     input,
     button,
     option {
-      color: unset;
-      background-color: unset;
+        color: unset;
+        background-color: unset;
     }
-  }
-
-  
+}

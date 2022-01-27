@@ -28,8 +28,10 @@ for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookC
 // With defautl values instead of null because it's too much work
 var selectedBook = bookCodes[0];
 var selectedChapter = 1;
-var selectedLanguage1 = langsByISO[25]; // eng
-var selectedLanguage2 = langsByISO[18]; // deu
+var selectedLanguage1 = langsByISO[18]; // deu
+var selectedLanguage2 = langsByISO[109]; // rus
+
+// console.log(langsByISO.indexOf("rus"));
 
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {
@@ -105,43 +107,95 @@ selLang2.addEventListener("change", function() {
 });
 
 document.querySelector("#search").addEventListener("click", function() {
-    function fetchDataIn(book = "Nach", chapter, lang) {
 
-        // Delete the intro after the first search
-        document.querySelector(".instructions").innerHTML = ""
+    // Delete the intro after the first search
+    document.querySelector(".instructions").innerHTML = ""
 
-        const urlBOM = `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`
-        let results = null;
+    function urlBOM(book, chapter, lang) { return `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`; }
 
-        // Should reset the languages in the HTML, otherwise the chosen order can't be achieved
-        resetLanguageHTML(selectedLanguage1, selectedLanguage2);
 
-        function convertToJson(response) {
-            if (response.ok) {
-                return response.json();
-            } else {
-                console.log("error:", response);
-            }
+    // Should reset the languages in the HTML, otherwise the chosen order can't be achieved
+    //resetLanguageHTML(selectedLanguage1, selectedLanguage2);
+
+    function convertToJson(response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            console.log("error:", response);
         }
-
-        function displayScripts(data) {
-            // console.log(data);
-            const outputBOMElement = document.querySelector(`#${lang}`);
-            results = data
-            const chapterBody = results.content.body;
-            // Somewhere over here replace("/study/","https://www.churchofjesuschrist.org/study/") so the footnotes actually work
-            outputBOMElement.innerHTML = chapterBody;
-
-            // const footer = document.querySelector("footer");
-            // footer.innerHTML = "";
-        }
-
-        fetch(urlBOM).then(convertToJson).then(displayScripts);
     }
 
-    fetchDataIn(selectedBook, selectedChapter, selectedLanguage1)
-    fetchDataIn(selectedBook, selectedChapter, selectedLanguage2)
+    // THE VERS ALIGNMENT IS CREDITED TO ROUVEN LEMMERZ
+    function alignSideBySide(chapterBody0, chapterBody1) {
+        let dat0 = new DOMParser().parseFromString(chapterBody0, 'text/html');
+        let dat1 = new DOMParser().parseFromString(chapterBody1, 'text/html');
+
+        function wraptr(str) {
+            //table row functionality (css can also emulate p tag as tr)
+            //return "<tr class=\'tablerow\'>"+str+"<\/tc>";
+            return str;
+        }
+
+        function wraptc(str, tag) {
+            //table cell functionality
+            return "<span class=\'" + tag + "\'>" + str + "<\/span>";
+            //return str;
+        }
+
+        let headerH1Nodes0 = dat0.querySelectorAll("header > h1");
+        let headerH1Nodes1 = dat1.querySelectorAll("header > h1");
+        for (let i = 0; i < headerH1Nodes0.length; i++) {
+            headerH1Nodes0[i].innerHTML = wraptc(headerH1Nodes0[i].innerHTML, "left") + wraptc(headerH1Nodes1[i].innerHTML, "right");
+        }
+
+
+        //Merge Headers
+        // (Chapter headings not yet Merged)
+        let headerPNodes0 = dat0.querySelectorAll("header > p");
+        let headerPNodes1 = dat1.querySelectorAll("header > p");
+        for (let i = 0; i < headerPNodes0.length; i++) {
+            headerPNodes0[i].innerHTML = wraptc(headerPNodes0[i].innerHTML, "left") + wraptc(headerPNodes1[i].innerHTML, "right");
+        }
+
+        //Merge Paragraphs by number
+        for (let i = 1; i < dat0.getElementsByClassName("verse").length + 1; i++) {
+            dat0.getElementById("p" + i).innerHTML = wraptr(wraptc(dat0.getElementById("p" + i).innerHTML, "left") + wraptc(dat1.getElementById("p" + i).innerHTML, "right"));
+        }
+
+        //Merge Footers (if existent)
+        let footer0 = dat0.querySelector("footer");
+        let footer1 = dat1.querySelector("footer");
+
+        if (footer0 != null && footer1 != null) {
+            let f0 = "";
+            let f1 = "";
+            if (footer0 != null) {
+                f0 = footer0.innerHTML;
+            }
+
+            if (footer1 != null) {
+                f1 = footer1.innerHTML;
+            }
+
+            footer0.innerHTML = wraptr(wraptc(f0, "left") + wraptc(f1, "right"));
+        }
+        return dat0.body.innerHTML;
+    }
+
+    async function displayScripts() {
+        const outputBOMElement = document.querySelector(".langOutput");
+        let data0 = await fetch(urlBOM(selectedBook, selectedChapter, selectedLanguage1)).then(convertToJson);
+        let data1 = await fetch(urlBOM(selectedBook, selectedChapter, selectedLanguage2)).then(convertToJson);
+        let chapterBody0 = data0.content.body;
+        let chapterBody1 = data1.content.body;
+        // Somewhere over here replace("/study/","https://www.churchofjesuschrist.org/study/") so the footnotes actually work
+        outputBOMElement.innerHTML = alignSideBySide(chapterBody0, chapterBody1);
+    }
+
+    displayScripts();
+
+
 });
 
-resetLanguageHTML(selectedLanguage1, selectedLanguage2);
+// resetLanguageHTML(selectedLanguage1, selectedLanguage2);
 populateChapters()
