@@ -14,3 +14,8 @@ https://ampo0809.github.io/BOMSideBySide/
 - [ ] Favicon
 - [x] Bug in chapter number
 - [x] Fill in the TODO list
+
+### Acknowledgements
+Thank you for your collaboration!
+- Rouven Lemmerz
+- Oleg Obiukh
