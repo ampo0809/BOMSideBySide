@@ -111,7 +111,26 @@ document.querySelector("#search").addEventListener("click", function() {
     // Delete the intro after the first search
     document.querySelector(".instructions").innerHTML = ""
 
-    function urlBOM(book, chapter, lang) { return `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`; }
+    function urlBOM(book, chapter, lang) {
+
+        // console.log(book, chapter, lang);
+
+        const localLanguages = ["eng", "spa", "por"]
+
+        if (localLanguages.includes(lang)) {
+            console.log(`${lang} found locally`);
+            return `bomLocal/${lang}/${book}_${chapter}.json`;
+
+            // return `bomLocal/teest.json`;
+        } else {
+            return `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`;
+        }
+
+        // Original URL
+        // https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=eng&uri=/scriptures/bofm/1-ne/1
+    }
+
+    // function urlBOM(book, chapter, lang) { return `https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content?lang=${lang}&uri=/scriptures/bofm/${book}/${chapter}`; }
 
 
     // Should reset the languages in the HTML, otherwise the chosen order can't be achieved

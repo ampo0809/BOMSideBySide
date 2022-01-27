@@ -2,4 +2,7 @@
     .instructions {
         margin: 0 10rem;
     }
+    .langOutput {
+        margin: 0 4rem;
+    }
 }
