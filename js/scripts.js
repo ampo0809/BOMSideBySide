@@ -117,7 +117,7 @@ document.querySelector("#search").addEventListener("click", function() {
 
     function urlBOM(book, chapter, lang) {
         // First search if the chosen language is stored locally
-        const localLanguages = ["eng", "spa", "por", "rus", "deu"]
+        const localLanguages = ["eng", "spa", "por", "rus", "deu", "ukr"]
         if (localLanguages.includes(lang)) {
             console.log(`${lang} found locally`);
             return `bomLocal/${lang}/${book}_${chapter}.json`;
