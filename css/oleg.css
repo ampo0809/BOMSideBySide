@@ -3,6 +3,10 @@
         margin: 0 10rem;
     }
     .langOutput {
-        margin: 0 4rem;
+        margin: 0 13rem;
+    }
+    .langOutput h1,
+    .langOutput p {
+        grid-gap: 2rem;
     }
 }

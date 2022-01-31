@@ -5,17 +5,17 @@ if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
     document.querySelector('link[href="/light.css"]').media = 'all';
 }
 
-// Related to the autohide of the choiceBar
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("choiceBar").style.top = "0";
-    } else {
-        document.getElementById("choiceBar").style.top = "-100px";
-    }
-    prevScrollpos = currentScrollPos;
-}
+// // Related to the autohide of the choiceBar
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() {
+//     var currentScrollPos = window.pageYOffset;
+//     if (prevScrollpos > currentScrollPos) {
+//         document.getElementById("choiceBar").style.top = "0";
+//     } else {
+//         document.getElementById("choiceBar").style.top = "-100px";
+//     }
+//     prevScrollpos = currentScrollPos;
+// }
 
 // Separate books object into 3 arrays
 let bookNames = []
@@ -29,9 +29,9 @@ for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookC
 var selectedBook = bookCodes[0];
 var selectedChapter = 1;
 var selectedLanguage1 = langsByISO[18]; // deu
-var selectedLanguage2 = langsByISO[109]; // rus
+var selectedLanguage2 = langsByISO[25]; // eng
 
-// console.log(langsByISO.indexOf("rus"));
+// console.log(langsByISO.indexOf("eng"));
 
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {
@@ -77,7 +77,11 @@ var selBooks = document.querySelector("#books");
 selBooks.addEventListener("change", function() {
     let bookOptionValue = selBooks.value;
     selectedBook = bookOptionValue;
-    console.log(selectedBook);
+
+    localStorage.setItem("selectedBook", selectedBook);
+
+
+    // console.log(selectedBook);
 
     // Finds the number of chapters to populate the chapter menu
     let numChap = booksAndChapters.books.find(obj => obj.bookCode == selectedBook);
