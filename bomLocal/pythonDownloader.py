@@ -17,7 +17,7 @@ booksAndChapters = [
     { "bookName": "Ether", "bookCode": "ether", "bookChapters": 15 },
     { "bookName": "Moroni", "bookCode": "moro", "bookChapters": 10 }]
 
-lang = "rus"
+lang = "ukr"
 
 for i in range(0, len(booksAndChapters)):
 
