@@ -31,7 +31,7 @@ var selectedChapter = 1;
 var selectedLanguage1 = langsByISO[18]; // deu
 var selectedLanguage2 = langsByISO[25]; // eng
 
-// console.log(langsByISO.indexOf("eng"));
+// console.log(langsByISO.indexOf("ara"));
 
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {
@@ -62,6 +62,8 @@ for (let i = 0; i < langsByISO.length; i++) {
     langOneElement.innerHTML += langOptionHTML;
     langTwoElement.innerHTML += langOptionHTML;
 }
+
+// Fix language direction style issue: Make an array of rtl languages and return a bool. Use the result to create a conditional rule in CSS.
 
 function resetLanguageHTML(lang1, lang2) {
     const langDiv = document.querySelector(".langOutput");
