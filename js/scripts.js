@@ -34,8 +34,8 @@ var localStorageLang2 = localStorage.getItem("selectedLang2");
 
 var selectedBook = (localStorageBook != null ? localStorageBook : bookCodes[0]);
 var selectedChapter = (localStorageChapter != null ? localStorageChapter : 1);
-var selectedLanguage1 = (localStorageLang1 != null ? localStorageLang1 : langsByISO[25]); // eng
-var selectedLanguage2 = (localStorageLang2 != null ? localStorageLang2 : langsByISO[108]); // rus
+var selectedLanguage1 = (localStorageLang1 != null ? localStorageLang1 : langsByISO[108]); // rus
+var selectedLanguage2 = (localStorageLang2 != null ? localStorageLang2 : langsByISO[25]); // eng
 
 // console.log(langsByISO.indexOf("rus"));
 
