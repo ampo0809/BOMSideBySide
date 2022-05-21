@@ -28,10 +28,10 @@ for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookC
 // With defautl values instead of null because it's too much work
 var selectedBook = bookCodes[0];
 var selectedChapter = 1;
-var selectedLanguage1 = langsByISO[18]; // deu
-var selectedLanguage2 = langsByISO[25]; // eng
+var selectedLanguage1 = langsByISO[25]; // eng
+var selectedLanguage2 = langsByISO[108]; // rus
 
-// console.log(langsByISO.indexOf("ara"));
+// console.log(langsByISO.indexOf("rus"));
 
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {
@@ -119,7 +119,7 @@ document.querySelector("#search").addEventListener("click", function() {
 
     function urlBOM(book, chapter, lang) {
         // First search if the chosen language is stored locally
-        const localLanguages = ["eng", "spa", "por", "rus", "deu", "ukr"]
+        const localLanguages = ["eng", "spa", "por", "rus", "deu", "ukr", "fra"]
         if (localLanguages.includes(lang)) {
             console.log(`${lang} found locally`);
             return `bomLocal/${lang}/${book}_${chapter}.json`;
