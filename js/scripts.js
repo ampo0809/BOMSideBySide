@@ -51,10 +51,12 @@ for (let i = 0; i < 15; i++) {
     bookElement.innerHTML += bookHTML;
 }
 
-// Populate the chapters
-function populateChapters(len = 22) {
 
-    console.log(localStorageChapter);
+// Finds the number of chapters to populate the chapter menu
+let numChap = booksAndChapters.books.find(obj => obj.bookCode == selectedBook);
+
+// Populate the chapters
+function populateChapters(len = numChap.bookChapters) {
 
     const chapterElement = document.querySelector("#chapters");
     chapterElement.innerHTML = ""
@@ -114,9 +116,7 @@ selBooks.addEventListener("change", function() {
     localStorage.removeItem("selectedChapter");
     selectedChapter = 1;
 
-    // Finds the number of chapters to populate the chapter menu
-    let numChap = booksAndChapters.books.find(obj => obj.bookCode == selectedBook);
-    // console.log(numChap.bookChapters);
+    numChap = booksAndChapters.books.find(obj => obj.bookCode == selectedBook);
     populateChapters(numChap.bookChapters);
 });
 
