@@ -26,31 +26,50 @@ let bookChapters = []
 for (let i = 0; i < 15; i++) { bookChapters.push(booksAndChapters.books[i].bookChapters) };
 
 // With defautl values instead of null because it's too much work
-var selectedBook = bookCodes[0];
-var selectedChapter = 1;
-var selectedLanguage1 = langsByISO[25]; // eng
-var selectedLanguage2 = langsByISO[108]; // rus
+
+var localStorageBook = localStorage.getItem("selectedBook");
+var localStorageChapter = localStorage.getItem("selectedChapter");
+var localStorageLang1 = localStorage.getItem("selectedLang1");
+var localStorageLang2 = localStorage.getItem("selectedLang2");
+
+var selectedBook = (localStorageBook != null ? localStorageBook : bookCodes[0]);
+var selectedChapter = (localStorageChapter != null ? localStorageChapter : 1);
+var selectedLanguage1 = (localStorageLang1 != null ? localStorageLang1 : langsByISO[25]); // eng
+var selectedLanguage2 = (localStorageLang2 != null ? localStorageLang2 : langsByISO[108]); // rus
 
 // console.log(langsByISO.indexOf("rus"));
 
 // Populate the books of the BOM
 for (let i = 0; i < 15; i++) {
     const bookElement = document.querySelector("#books");
-    const bookHTML = `<option value="${bookCodes[i]}">${bookNames[i]}</option>`;
+    var bookHTML = `<option value="${bookCodes[i]}">${bookNames[i]}</option>`;
+
+    if (localStorageBook == bookCodes[i]) {
+        bookHTML = `<option value selected="${bookCodes[i]}">${bookNames[i]}</option>`;
+    }
+
     bookElement.innerHTML += bookHTML;
 }
 
 // Populate the chapters
 function populateChapters(len = 22) {
+
+    console.log(localStorageChapter);
+
     const chapterElement = document.querySelector("#chapters");
     chapterElement.innerHTML = ""
 
     for (let i = 1; i <= len; i++) {
         // Improvement: Display chapters corrsponding to each book
-        const chapterHTML = `<option value="${i}">${i}</option>`;
+        var chapterHTML = `<option value="${i}">${i}</option>`;
+
+        if (localStorageChapter == i) {
+            chapterHTML = `<option value selected="${i}">${i}</option>`;
+        }
+
         chapterElement.innerHTML += chapterHTML;
     }
-    selectedChapter = 1
+    // selectedChapter = 1;
 }
 
 // Popultes both language dropdown menus at the same time
@@ -58,9 +77,20 @@ for (let i = 0; i < langsByISO.length; i++) {
     // Ideally, the second menu should filter out the firlst language, but whatever...
     const langOneElement = document.querySelector("#lang1");
     const langTwoElement = document.querySelector("#lang2");
-    const langOptionHTML = `<option value="${langsByISO[i]}">${langsByName[i]}</option>`;
-    langOneElement.innerHTML += langOptionHTML;
-    langTwoElement.innerHTML += langOptionHTML;
+
+    var langOneOptionHTML = `<option value="${langsByISO[i]}">${langsByName[i]}</option>`;
+    var langTwoOptionHTML = `<option value="${langsByISO[i]}">${langsByName[i]}</option>`;
+
+    if (localStorageLang1 == langsByISO[i]) {
+        langOneOptionHTML = `<option value selected="${langsByISO[i]}">${langsByName[i]}</option>`;
+    }
+
+    if (localStorageLang2 == langsByISO[i]) {
+        langTwoOptionHTML = `<option value selected="${langsByISO[i]}">${langsByName[i]}</option>`;
+    }
+
+    langOneElement.innerHTML += langOneOptionHTML;
+    langTwoElement.innerHTML += langTwoOptionHTML;
 }
 
 // Fix language direction style issue: Make an array of rtl languages and return a bool. Use the result to create a conditional rule in CSS.
@@ -81,9 +111,8 @@ selBooks.addEventListener("change", function() {
     selectedBook = bookOptionValue;
 
     localStorage.setItem("selectedBook", selectedBook);
-
-
-    // console.log(selectedBook);
+    localStorage.removeItem("selectedChapter");
+    selectedChapter = 1;
 
     // Finds the number of chapters to populate the chapter menu
     let numChap = booksAndChapters.books.find(obj => obj.bookCode == selectedBook);
@@ -96,6 +125,8 @@ selChap.addEventListener("change", function() {
     let chapterOptionValue = selChap.value;
     selectedChapter = chapterOptionValue;
     // console.log(selectedChapter);
+
+    localStorage.setItem("selectedChapter", selectedChapter);
 });
 
 var selLang1 = document.querySelector("#lang1");
@@ -103,6 +134,8 @@ selLang1.addEventListener("change", function() {
     let langOptionValue = selLang1.value;
     selectedLanguage1 = langOptionValue;
     console.log(selectedLanguage1);
+
+    localStorage.setItem("selectedLang1", selectedLanguage1);
 });
 
 var selLang2 = document.querySelector("#lang2");
@@ -110,6 +143,8 @@ selLang2.addEventListener("change", function() {
     let langOptionValue = selLang2.value;
     selectedLanguage2 = langOptionValue;
     console.log(selectedLanguage2);
+
+    localStorage.setItem("selectedLang2", selectedLanguage2);
 });
 
 document.querySelector("#search").addEventListener("click", function() {
